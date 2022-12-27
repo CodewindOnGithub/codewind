@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "paths": {
+      "@app/root-store": ["./src/store.ts"],
+      "@app/hooks": ["./src/hooks.ts"],
+      "@todos/models": ["./src/features/todos/models/index.ts"],
+      "@todos/domain": ["./src/features/todos/domain/index.ts"],
+      "@todos/slice": ["./src/features/todos/domain/+state/todos.slice.ts"],
+      "@todos/container/*": ["./src/features/todos/container/*"],
+      "@todos/components": ["./src/features/todos/components/index.ts"]
+    }
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

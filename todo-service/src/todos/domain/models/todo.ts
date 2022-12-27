@@ -1,0 +1,6 @@
+export class Todo {
+  id: string;
+  title: string;
+  isDone: boolean;
+  createdOn: Date;
+}
