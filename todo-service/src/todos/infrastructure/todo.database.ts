@@ -10,6 +10,24 @@ export class TodoDatabase implements TodoRepository {
     private readonly todoDocument: Model<TodoDocument>,
   ) {}
 
+  async findOneById(id: string): Promise<Todo | undefined> {
+    const document = await this.todoDocument
+      .findById(new Types.ObjectId(id))
+      .exec();
+    if (document) {
+      return {
+        id: document._id.toString(),
+        title: document.title,
+        createdOn: document.createdOn,
+        isDone: document.isDone,
+      };
+    } else return undefined;
+  }
+
+  async update(todo: Todo): Promise<void> {
+    await this.todoDocument.updateOne(todo).exec();
+  }
+
   async findAll(): Promise<Todo[]> {
     const documents = await this.todoDocument.find().exec();
     return documents.map(({ _id, title, createdOn, isDone }) => ({

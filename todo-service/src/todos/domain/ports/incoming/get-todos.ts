@@ -1,5 +1,5 @@
 import { Todo } from '../../models/todo';
 
-export interface GetTodos {
-  getTodos(): Promise<Todo[]>;
+export abstract class GetTodosUseCase {
+  abstract handle(): Promise<Todo[]>;
 }
