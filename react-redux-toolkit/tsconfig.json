@@ -22,7 +22,8 @@
       "@todos/domain": ["./src/features/todos/domain/index.ts"],
       "@todos/slice": ["./src/features/todos/domain/+state/todos.slice.ts"],
       "@todos/container/*": ["./src/features/todos/container/*"],
-      "@todos/components": ["./src/features/todos/components/index.ts"]
+      "@todos/components": ["./src/features/todos/components/index.ts"],
+      "@layout/container/*": ["./src/features/layout/container/*"],
     }
   },
   "include": ["src"],

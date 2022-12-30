@@ -12,7 +12,7 @@ const ToDos = () => {
     dispatch(loadTodos());
   }, []);
 
-  const renderTodos = () => todos.map((todo) => <div>{todo.title}</div>);
+  const renderTodos = () => todos.map((todo) => <div key={todo.id}>{todo.title}</div>);
 
   return <div>{renderTodos()}</div>;
 };
